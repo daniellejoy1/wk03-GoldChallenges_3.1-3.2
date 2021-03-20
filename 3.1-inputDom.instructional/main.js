@@ -10,3 +10,18 @@
 */
 
 //NOTE: Write your code below and push back to your github branch.  SUBMIT YOUR GITHUB URL IN CANVAS
+
+function tabTitle() {document.getElementsByTagName('title')
+    tabTitle.innerText('3.1 REPL Challenge');
+}
+
+tabTitle()
+
+function setVar() {
+    let store = document.getElementById('store').value;
+    let product = document.getElementById('product').value;
+    let quantity = document.getElementById('quantity').value;
+
+    let shoppingTrip = document.querySelector('p');
+    shoppingTrip.innerText = `I shopped at ${store} for ${quantity} ${product}`
+}

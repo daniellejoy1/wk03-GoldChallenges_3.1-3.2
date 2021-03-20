@@ -19,3 +19,53 @@
 //? not required:  If you liked to style it, feel free to add a stylesheet to your HTML.
 
 //NOTE: Write your code below and push back to your github branch.  SUBMIT YOUR GITHUB URL IN CANVAS
+
+
+let min = 1;
+let max = 10;
+let attempts = 3;
+let answer = Math.floor(Math.random() * (max - min + 1)) + min;
+let guess = '';
+let message = 'Want to play a game? \n Guess a number between ' + min + ' and ' + max + ':';
+
+while (attempts > 0) {
+
+    guess = prompt(message, guess);
+
+    if (guess == null) {
+        alert('Cool cool cool.\nI didn\'t want to play either.');
+        break;
+    }
+ 
+    else if (isFinite(guess) && guess != '') {
+      
+        guess = +guess;
+      
+        if (guess < min) {
+            alert('Your guess should be no less than ' + min + '.');
+        }
+        else if (guess > max) {
+            alert('Your guess should be no more than ' + max + '.');
+        }
+        else if (guess > answer) {
+            alert('Your guess is too high. \nTry again!');
+        }
+        else if (guess < answer) {
+            alert('Your guess is too low. \nTry again!');
+        }
+
+        else {
+            alert('You guessed the number! \n I knew you could do it!');
+            break;
+        }
+    }
+        else {
+        alert('You have to pick a number.');
+    }
+    
+    attempts = attempts - 1;
+}
+
+if (attempts == 0) {
+    alert('You ran out of tries.  The number was ' + answer + '.');
+}
